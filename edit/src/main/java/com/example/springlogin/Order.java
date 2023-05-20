@@ -10,6 +10,7 @@
  import javax.persistence.GenerationType;
  import javax.persistence.Id;
 
+
  @Entity
  @Data
 
@@ -27,21 +28,21 @@ class Order {
     private String status ;
 
   public static Order GetNewOrder() {
-        String[] DRINK_OPTIONS = { "Caffe Latte", "Caffe Americano", "Caffe Mocha", "Espresso", "Cappuccino" };
-        String[] MILK_OPTIONS = { "Whole Milk", "2% Milk", "Nonfat Milk", "Almond Milk", "Soy Milk" };
-        String[] SIZE_OPTIONS = { "Short", "Tall", "Grande", "Venti" };
+        String[] dirnk = { "Caffe Latte", "Caffe Americano", "Caffe Mocha", "Espresso", "Cappuccino" };
+        String[] mike = { "Whole", "2% Milk", "Almond Milk", "Oat Milk" };
+        String[] size = {  "Tall", "Grande", "Venti" };
 
-        Random random = new Random();
+        Random ran = new Random();
 
-        String randomDrink = DRINK_OPTIONS[random.nextInt(DRINK_OPTIONS.length)];
-        String randomMilk = MILK_OPTIONS[random.nextInt(MILK_OPTIONS.length)];
-        String randomSize = SIZE_OPTIONS[random.nextInt(SIZE_OPTIONS.length)];
+        String ranDrink = dirnk[ran.nextInt(dirnk.length)];
+        String ranMilk = mike[ran.nextInt(mike.length)];
+        String ranSize = size[ran.nextInt(size.length)];
 
         Order cashierOrder = new Order();
-        cashierOrder.setDrink(randomDrink);
-        cashierOrder.setMilk(randomMilk);
-        cashierOrder.setSize(randomSize);
-        cashierOrder.setTotal(RandomOrder(randomDrink, randomSize));
+        cashierOrder.setDrink(ranDrink);
+        cashierOrder.setMilk(ranMilk);
+        cashierOrder.setSize(ranSize);
+        cashierOrder.setTotal(RandomOrder(ranDrink, ranSize));
         cashierOrder.setStatus("New");
 
         return cashierOrder;
