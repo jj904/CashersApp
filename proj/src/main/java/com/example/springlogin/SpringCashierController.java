@@ -78,7 +78,7 @@ public class SpringCashierController {
                 "Size:  " + order.getSize() + "\n" +
                 "Total: " + order.getTotal() + "\n" +
                 "\n" +
-                "Register: " + order.getRegister() + "\n" +
+                "Register: " + command.getRegister() + "\n" +
                 "Status:   " + order.getStatus() + "\n" ;
         }
         else if ( action.equals("Get Order") ) {
@@ -107,6 +107,7 @@ public class SpringCashierController {
         return "starbucks" ;
 
     }
+
     
 
 }
