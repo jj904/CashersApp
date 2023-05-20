@@ -1,34 +1,34 @@
-package com.example.springlogin;
+ package com.example.springlogin;
 
+ import java.text.DecimalFormat;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Random;
+ import lombok.Data;
+ import lombok.RequiredArgsConstructor;
+ import java.time.LocalDate;
+ import javax.persistence.Entity;
+ import javax.persistence.GeneratedValue;
+ import javax.persistence.GenerationType;
+ import javax.persistence.Id;
 
-import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+ @Entity
+ @Data
 
-@Entity
-@Data
-public class Order {
+class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    
+    private Integer id ;
 
-    private String drink;
-    private String milk;
-    private String size;
-    private String total;
-    private String register;
-    private String status;
-    private String store;
+    private String drink ;
+    private String milk ;
+    private String size ;
+    private String total ;
+    private String register ;
+    private String status ;
 
-    public static Order GetNewOrder() {
+  public static Order GetNewOrder() {
         String[] DRINK_OPTIONS = { "Caffe Latte", "Caffe Americano", "Caffe Mocha", "Espresso", "Cappuccino" };
         String[] MILK_OPTIONS = { "Whole Milk", "2% Milk", "Nonfat Milk", "Almond Milk", "Soy Milk" };
         String[] SIZE_OPTIONS = { "Short", "Tall", "Grande", "Venti" };
@@ -128,6 +128,10 @@ short 	$1.75
 tall 	$1.95
 
  */
+
+
+
+
 
 
 
